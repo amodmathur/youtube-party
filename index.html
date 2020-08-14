@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YouTube Party</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">    
+
+</head>
+<body>
+    <div>
+        <h1 style="margin-top: 1em; margin-bottom: 1em;">Amod's YouTube Party</h1>
+    </div>
+
+<div id="ytplayer"></div>
+<script>
+
+// Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+
+  var player;
+  function onYouTubePlayerAPIReady() {
+    var custom = window.prompt("Enter Video ID: ");
+    player = new YT.Player('ytplayer', {
+      height: '720',
+      width: '1280',
+      videoId: custom
+    });
+  }
+
+
+</script>
+
+
+</body>
+</html>
